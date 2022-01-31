@@ -1,0 +1,13 @@
+C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\Domain\bin\Debug\netcoreapp3.1\Domain.deps.json
+C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\Domain\bin\Debug\netcoreapp3.1\Domain.runtimeconfig.json
+C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\Domain\bin\Debug\netcoreapp3.1\Domain.runtimeconfig.dev.json
+C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\Domain\bin\Debug\netcoreapp3.1\Domain.dll
+C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\Domain\bin\Debug\netcoreapp3.1\Domain.pdb
+C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\Domain\obj\Debug\netcoreapp3.1\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\Domain\obj\Debug\netcoreapp3.1\Domain.AssemblyInfoInputs.cache
+C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\Domain\obj\Debug\netcoreapp3.1\Domain.AssemblyInfo.cs
+C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\Domain\obj\Debug\netcoreapp3.1\Domain.csproj.CoreCompileInputs.cache
+C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\Domain\obj\Debug\netcoreapp3.1\Domain.dll
+C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\Domain\obj\Debug\netcoreapp3.1\Domain.pdb
+C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\Domain\obj\Debug\netcoreapp3.1\Domain.genruntimeconfig.cache
+C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\Domain\obj\Debug\netcoreapp3.1\Domain.csproj.AssemblyReference.cache

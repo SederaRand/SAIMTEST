@@ -1,0 +1,10 @@
+C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\Infrastructure\bin\Debug\netcoreapp3.1\Infrastructure.deps.json
+C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\Infrastructure\bin\Debug\netcoreapp3.1\Infrastructure.dll
+C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\Infrastructure\bin\Debug\netcoreapp3.1\Infrastructure.pdb
+C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.AssemblyInfo.cs
+C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.dll
+C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.pdb
