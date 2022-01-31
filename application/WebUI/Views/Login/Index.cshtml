@@ -1,4 +1,36 @@
-﻿<div class="text-center">
-    <h1 class="display-4">Test admin</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">Page de connexion</a>.</p>
+﻿@{    
+    Layout ="~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<div class="login-box">
+    <!-- /.login-logo -->
+    <div class="card card-outline card-primary">
+        <div class="card-header text-center">
+            <a href="../../index2.html" class="h1"><b>Admin</b> SAIM</a>
+        </div>
+        <div class="card-body">
+            <p class="login-box-msg">Sign in to start your session</p>
+
+            <form action="../../index3.html" method="post">
+                <div class="input-group mb-3">
+                    <input type="username" class="form-control" placeholder="Username">
+                </div>
+                <div class="input-group mb-3">
+                    <input type="password" class="form-control" placeholder="Password">
+                </div>
+                <div class="row">
+                    <div class="col-8">
+                        <div class="icheck-primary"></div>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </form>
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
 </div>

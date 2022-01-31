@@ -12,5 +12,10 @@ namespace SAIM_FO.Controllers
         {
             return View();
         }
+
+        public void Login(string username, string password)
+        {
+
+        }
     }
 }
