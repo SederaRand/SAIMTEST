@@ -1,4 +1,7 @@
+using Application.Interfaces;
+using Application.Services;
 using Domain.Context;
+using Infrastructure.Repositories.Queries;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,6 +28,17 @@ namespace SAIM_FO
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //Service
+            services.AddTransient<ICompanyService, CompanyService>();
+            services.AddTransient<ICustomerService, CustomerService>();
+            services.AddTransient<IUserService, UserService>();
+
+            //Service Repository
+            services.AddTransient<CompanyQuery>();
+            services.AddTransient<CustomerQuery>();
+            services.AddTransient<UserQuery>();
+
+
             services.AddDbContext<MyDbContext>(options => options.UseMySQL(Configuration.GetConnectionString("Default")));
             services.AddControllersWithViews();
         }

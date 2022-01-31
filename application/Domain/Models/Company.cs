@@ -13,7 +13,6 @@ namespace Domain.Models
         public int IdCompany { get; set; }
         public string Details { get; set; }
         public string Contact { get; set; }
-        public string ContactStatus { get; set; }
-        //public int IdCustomers { get; set; }
+        public string ContactStatus { get; set; }        
     }
 }
