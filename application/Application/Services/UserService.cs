@@ -67,7 +67,15 @@ namespace Application.Services
 
         public bool Login(string username, string password)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return this._repositoryUser.Login(username, password);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public async Task<User> UpdateImage(User user)

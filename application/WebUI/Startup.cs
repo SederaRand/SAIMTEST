@@ -1,6 +1,8 @@
 using Application.Interfaces;
 using Application.Services;
 using Domain.Context;
+using Infrastructure.Interfaces.CommonInterfaces;
+using Infrastructure.Interfaces.IQueries;
 using Infrastructure.Repositories.Queries;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -34,9 +36,9 @@ namespace SAIM_FO
             services.AddTransient<IUserService, UserService>();
 
             //Service Repository
-            services.AddTransient<CompanyQuery>();
-            services.AddTransient<CustomerQuery>();
-            services.AddTransient<UserQuery>();
+            services.AddTransient<ICompanyQuery, CompanyQuery>();
+            services.AddTransient<ICustomerQuery, CustomerQuery>();
+            services.AddTransient<IUserQuery, UserQuery>();
 
 
             services.AddDbContext<MyDbContext>(options => options.UseMySQL(Configuration.GetConnectionString("Default")));
@@ -67,7 +69,7 @@ namespace SAIM_FO
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Login}/{action=Index}/{id?}");
             });
         }
     }

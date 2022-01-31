@@ -26,7 +26,7 @@ namespace Infrastructure.Repositories.Queries
 
         public bool Login(string username, string password)
         {
-            throw new NotImplementedException();
+            return FindAll().Any(x => x.Username == username && x.Password == password);
         }
     }
 }

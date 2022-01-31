@@ -5,10 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\CommonInterfaces\" />
-    <Folder Include="Interfaces\IQueries\" />
-    <Folder Include="Repositories\CommonRepository\" />
-    <Folder Include="Repositories\Queries\" />
+    <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
 
 </Project>

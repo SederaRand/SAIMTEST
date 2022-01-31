@@ -8,3 +8,8 @@ C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\Application\o
 C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\Application\obj\Debug\netcoreapp3.1\Application.csproj.CoreCompileInputs.cache
 C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\Application\obj\Debug\netcoreapp3.1\Application.dll
 C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\Application\obj\Debug\netcoreapp3.1\Application.pdb
+C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\Application\bin\Debug\netcoreapp3.1\Domain.dll
+C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\Application\bin\Debug\netcoreapp3.1\Infrastructure.dll
+C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\Application\bin\Debug\netcoreapp3.1\Domain.pdb
+C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\Application\bin\Debug\netcoreapp3.1\Infrastructure.pdb
+C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\Application\obj\Debug\netcoreapp3.1\Application.csproj.CopyComplete
