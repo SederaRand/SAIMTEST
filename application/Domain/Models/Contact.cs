@@ -16,6 +16,6 @@ namespace Domain.Models
         public string LastName { get; set; }
         public string Phone { get; set; }
         public bool Status { get; set; }
-        public virtual Company CompanyName { get; set; }        
+        public int CompanyId { get; set; }       
     }
 }

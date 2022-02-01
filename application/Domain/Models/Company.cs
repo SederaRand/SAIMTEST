@@ -15,5 +15,6 @@ namespace Domain.Models
         public string CompanyName { get; set; }
         public string Details { get; set; }
         public string Address { get; set; }
+        //public ICollection<Contact> Contacts { get; set; }
     }
 }

@@ -27,7 +27,9 @@
         <div class="row">
             <div class="card-header p-2">
                 <ul class="nav nav-pills">
-                    <li class="nav-item"><a class="nav-link active" href="@Url.Action("Create","Company")">Add</a></li>                   
+                    <li class="nav-item"><a class="nav-link active" href="@Url.Action("Create","Company")">Add</a></li>
+                    <li class="nav-item"><a class="nav-link accent-green" href="#" data-toggle="tab">Import .txt</a></li>                    
+                    <li class="nav-item"><a class="nav-link" href="#" data-toggle="tab">@Html.ActionLink("Export .txt", "ExportTxt")</a></li>
                 </ul>
             </div>
             <div class="col-12">
@@ -50,33 +52,32 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Name company</th>                                   
+                                    <th>Name company</th>
+                                    <th>Address</th>     
                                     <th>Details</th>
-                                    <th>Address</th>
-                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach (var company in ViewBag.ListCompany)
                                 {
-                                    <tr>
-                                        <td>@company.IdCompany</td>
-                                        <td>@company.CompanyName</td>
-                                        <td>@company.Details</td>
-                                        <td>@company.Address</td>                                       
-                                        <td class="project-actions text-right">                                            
-                                            <a class="btn btn-info btn-sm" href="@Url.Action("Update","Company" ,new { idCompany = company.IdCompany } )">
-                                                <i class="fas fa-pencil-alt">
-                                                </i>
-                                                Edit
-                                            </a>
-                                            <a class="btn btn-danger btn-sm" href="@Url.Action("Delete","Company" ,new { idCompany = company.IdCompany } )">
-                                                <i class="fas fa-trash">
-                                                </i>
-                                                Delete
-                                            </a>
-                                        </td>
-                                    </tr>
+                                <tr>
+                                    <td>@company.IdCompany</td>
+                                    <td>@company.CompanyName</td>
+                                    <td>@company.Address</td>
+                                    <td>@company.Details</td>
+                                    <td class="project-actions text-right">
+                                        <a class="btn btn-info btn-sm" href="@Url.Action("Update","Company" ,new { idCompany = company.IdCompany } )">
+                                            <i class="fas fa-pencil-alt">
+                                            </i>
+                                            Edit
+                                        </a>
+                                        <a class="btn btn-danger btn-sm" href="@Url.Action("Delete","Company" ,new { idCompany = company.IdCompany } )">
+                                            <i class="fas fa-trash">
+                                            </i>
+                                            Delete
+                                        </a>
+                                    </td>
+                                </tr>
 
                                 }
                             </tbody>

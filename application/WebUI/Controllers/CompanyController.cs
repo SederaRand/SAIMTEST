@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using SAIM_FO.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -50,8 +51,7 @@ namespace SAIM_FO.Controllers
             {
 
                 return RedirectToAction("Create", "Company");
-            }
-            
+            }            
         }
 
         [HttpPut]
@@ -102,6 +102,26 @@ namespace SAIM_FO.Controllers
                     throw ex;
                 }
             }            
+        }
+
+        /*
+         * Export List of Companies into Txt
+         */
+        public void ExportTxt()
+        {
+            // Where we take the file.txt
+            string path = "C:\\Users\\Ibonia\\Documents\\WORK FILE\\PROJECTS\\SAIM TEST\\application\\WebUI\\wwwroot\\txt";
+
+            // Take list of companies
+            List<Company> listCompany = _companyService.GetCompanies();
+
+            using (TextWriter tw = new StreamWriter(path))
+            {
+                foreach (var item in listCompany)
+                {
+                    tw.WriteLine(string.Format("IdCompany: {0} - Name: {1} - Details: {2} - Address: {3} \n", item.IdCompany, item.CompanyName, item.Details, item.Address));
+                }
+            }
         }
     }
 }
