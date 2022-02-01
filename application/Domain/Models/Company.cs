@@ -12,6 +12,7 @@ namespace Domain.Models
         [Column(Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdCompany { get; set; }
+        public string CompanyName { get; set; }
         public string Details { get; set; }
         public string Address { get; set; }
     }

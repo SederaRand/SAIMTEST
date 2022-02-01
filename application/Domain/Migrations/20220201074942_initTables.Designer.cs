@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Domain.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20220201071752_initTables")]
+    [Migration("20220201074942_initTables")]
     partial class initTables
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,6 +27,9 @@ namespace Domain.Migrations
 
                     b.Property<string>("Address")
                         .HasColumnType("varchar(767)");
+
+                    b.Property<string>("CompanyName")
+                        .HasColumnType("text");
 
                     b.Property<string>("Details")
                         .IsRequired()

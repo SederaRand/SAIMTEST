@@ -26,6 +26,9 @@ namespace Domain.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("varchar(767)");
 
+                    b.Property<string>("CompanyName")
+                        .HasColumnType("text");
+
                     b.Property<string>("Details")
                         .IsRequired()
                         .HasColumnType("text");

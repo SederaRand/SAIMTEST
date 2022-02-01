@@ -8,6 +8,7 @@ namespace SAIM_FO.Models
     public class CompanyModel
     {
         public string Details { get; set; }
+        public string CompanyName { get; set; }
         public string Address { get; set; }
     }
 }

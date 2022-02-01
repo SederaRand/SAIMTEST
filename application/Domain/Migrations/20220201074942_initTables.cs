@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
-
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Domain.Migrations
 {
@@ -14,6 +12,7 @@ namespace Domain.Migrations
                 {
                     IdCompany = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGeneratedOnAdd", true),
+                    CompanyName = table.Column<string>(type: "text", nullable: true),
                     Details = table.Column<string>(type: "text", nullable: false),
                     Address = table.Column<string>(type: "varchar(767)", nullable: true)
                 },
