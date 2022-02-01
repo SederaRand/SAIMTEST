@@ -60,7 +60,6 @@ C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\WebUI\obj\Deb
 C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\WebUI\obj\Debug\netcoreapp3.1\WebUI.TagHelpers.output.cache
 C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\WebUI\obj\Debug\netcoreapp3.1\WebUI.RazorCoreGenerate.cache
 C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Company\Index.cshtml.g.cs
-C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Customer\Index.cshtml.g.cs
 C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Login\Index.cshtml.g.cs
 C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
@@ -150,3 +149,6 @@ C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\WebUI\bin\Deb
 C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\WebUI\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Company\Create.cshtml.g.cs
 C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Company\Update.cshtml.g.cs
+C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Contact\Create.cshtml.g.cs
+C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Contact\Index.cshtml.g.cs
+C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Contact\Update.cshtml.g.cs

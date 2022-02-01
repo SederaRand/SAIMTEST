@@ -23,7 +23,7 @@ namespace SAIM_FO.Controllers
         }
 
         [HttpPost]
-        public ViewResult Login(UserModel user)
+        public IActionResult Login(UserModel user)
         {
             string username = user.Username;
             string password = user.Password;
@@ -33,12 +33,13 @@ namespace SAIM_FO.Controllers
             if (checkResult == true)
             {
                 // Return Index Home application 
-                return View("~/Views/Company/Index.cshtml");
+                return RedirectToAction("Index", "Company");            
             }
             else
             {
                 // Return span to nofity that username or password are wrong
-                return View();                
+                ViewBag.Error = "testt errrooor";
+                return View("Index");                
             }
         }
     }

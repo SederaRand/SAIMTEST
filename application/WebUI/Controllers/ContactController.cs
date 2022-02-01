@@ -6,9 +6,14 @@ using System.Threading.Tasks;
 
 namespace SAIM_FO.Controllers
 {
-    public class CustomerController : Controller
+    public class ContactController : Controller
     {
         public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult Create()
         {
             return View();
         }

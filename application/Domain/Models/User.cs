@@ -9,6 +9,7 @@ namespace Domain.Models
     public class User
     {
         [Key]
+        [Column(Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdUser { get; set; }
         public string Username { get; set; }

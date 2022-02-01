@@ -9,6 +9,7 @@ namespace Domain.Models
     public class Company
     {
         [Key]
+        [Column(Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdCompany { get; set; }
         public string Details { get; set; }
