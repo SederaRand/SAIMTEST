@@ -4,6 +4,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
+
 <div class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
@@ -23,11 +25,58 @@
 
 <!-- Main content -->
 <section class="content">
-    <div class="container-fluid">
+    <div class="container-fluid">      
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card card-danger">
+                    <div class="card-header">
+                        <h3 class="card-title">Import File</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="custom-file">
+                                            <form asp-controller="Company" asp-action="ImportTxt" method="post" enctype="multipart/form-data">
+                                                <input type="file" name="file" accept=".txt"/>
+                                                <button type="submit">Import File</button>
+                                            </form>
+                                        </div>                                        
+                                    </div>
+                                </div>
+                            </div>                            
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card card-green">
+                    <div class="card-header">
+                        <h3 class="card-title">Export file company</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="custom-file">
+                                            <input type="button" class="btn btn-default btn-block" value="Export" onclick="location.href='@Url.Action("ExportTxt", "Company")'" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                            
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="card-header p-2">
                 <ul class="nav nav-pills">
-                    <li class="nav-item"><a class="nav-link active" href="@Url.Action("Create","Company")">Add</a></li>                   
+                    <li class="nav-item"><a class="nav-link active" href="@Url.Action("Create","Company")">Add</a></li>                  
                 </ul>
             </div>
             <div class="col-12">
@@ -38,7 +87,6 @@
                             <div class="input-group input-group-sm" style="width: 150px;">
                                 <div class="card-tools">
                                     <div class="card-tools">
-
                                     </div>
                                 </div>
                             </div>
@@ -50,10 +98,9 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Name company</th>                                   
-                                    <th>Details</th>
+                                    <th>Name company</th>
                                     <th>Address</th>
-                                    <th>Actions</th>
+                                    <th>Details</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -62,9 +109,9 @@
                                     <tr>
                                         <td>@company.IdCompany</td>
                                         <td>@company.CompanyName</td>
+                                        <td>@company.Address</td>
                                         <td>@company.Details</td>
-                                        <td>@company.Address</td>                                       
-                                        <td class="project-actions text-right">                                            
+                                        <td class="project-actions text-right">
                                             <a class="btn btn-info btn-sm" href="@Url.Action("Update","Company" ,new { idCompany = company.IdCompany } )">
                                                 <i class="fas fa-pencil-alt">
                                                 </i>
@@ -86,7 +133,7 @@
                 </div>
                 <!-- /.card -->
             </div>
-        </div>       
+        </div>
     </div><!-- /.container-fluid -->
 </section>
 <!-- /.content -->

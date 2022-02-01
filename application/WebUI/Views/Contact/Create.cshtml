@@ -1,4 +1,5 @@
-﻿@*
+﻿@model SAIM_FO.Models.ContactModel
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
@@ -31,36 +32,38 @@
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form>
+                    <form asp-controller="Contact" asp-action="Create" method="post">
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="FirstName">First Name</label>
-                                <input class="form-control" type="text">
+                                <input asp-for="FirstName" class="form-control" type="text">
                             </div>
                             <div class="form-group">
                                 <label for="LastName">Last Name</label>
-                                <input class="form-control" type="text">
+                                <input asp-for="LastName" class="form-control" type="text">
                             </div>
                             <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input class="form-control" type="text">
+                                <label for="Phone">Phone Number</label>
+                                <input asp-for="Phone" class="form-control" type="text">
                             </div>
                             <div class="form-group">
-                                <label for="address">Status</label> 
-                                
-                                <select class="form-control">
-                                    <option> </option>
-                                    <option>favoris</option>
-                                    <option>No favoris</option>
-                                </select>                                  
+                                <label>Status</label>
+                                <select class="form-control" asp-for="Status">
+                                    <option></option>
+                                    <option>Favorites</option>
+                                    <option>No Favorites</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="address">Company</label>
-                                <select class="form-control">
-                                    <option> </option>
-                                    <option>saim</option>
-                                    <option>apple</option>
-                                    <option>google</option>
+
+                                <select class="form-control" asp-for="Company">
+
+                                    <option></option>
+                                    @foreach (var company in ViewBag.ListCompanies)
+                                    {
+                                        <option>@company</option>
+                                    }
                                 </select>
                             </div>
                         </div>
@@ -68,7 +71,7 @@
 
                         <div class="card-footer">
                             <button type="submit" class="btn btn-primary">Submit</button>
-                            <button type="submit" class="btn btn-danger">Cancel</button>
+                            <input type="button" class="btn btn-danger" value="Cancel" onclick="location.href='@Url.Action("Index", "Contact")'" />
                         </div>
                     </form>
                 </div>
