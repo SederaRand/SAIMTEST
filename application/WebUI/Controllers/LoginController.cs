@@ -33,7 +33,7 @@ namespace SAIM_FO.Controllers
             if (checkResult == true)
             {
                 // Return Index Home application 
-                return View("~/Views/Customer/Index.cshtml");
+                return View("~/Views/Company/Index.cshtml");
             }
             else
             {

@@ -13,11 +13,11 @@ namespace Domain.Context
 
         public DbSet<User> User { get; set; }
         public DbSet<Company> Company { get; set; }
-        public DbSet<Customer> Customer { get; set; }
+        public DbSet<Contact> Customer { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Customer>()
+            modelBuilder.Entity<Contact>()
                 .HasOne(p => p.Company);
         }
     }

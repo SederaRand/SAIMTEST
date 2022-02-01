@@ -12,7 +12,6 @@ namespace Domain.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdCompany { get; set; }
         public string Details { get; set; }
-        public string Contact { get; set; }
-        public string ContactStatus { get; set; }        
+        public string Address { get; set; }
     }
 }

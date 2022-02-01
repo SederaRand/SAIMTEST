@@ -32,12 +32,12 @@ namespace SAIM_FO
         {
             //Service
             services.AddTransient<ICompanyService, CompanyService>();
-            services.AddTransient<ICustomerService, CustomerService>();
+            services.AddTransient<IContactService, ContactService>();
             services.AddTransient<IUserService, UserService>();
 
             //Service Repository
             services.AddTransient<ICompanyQuery, CompanyQuery>();
-            services.AddTransient<ICustomerQuery, CustomerQuery>();
+            services.AddTransient<IContactQuery, ContactQuery>();
             services.AddTransient<IUserQuery, UserQuery>();
 
 
