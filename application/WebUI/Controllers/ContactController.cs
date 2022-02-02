@@ -25,7 +25,26 @@ namespace SAIM_FO.Controllers
         public IActionResult Index()
         {
             List<Contact> listContact = _contactService.GetContacts();
-            ViewBag.ListContact = listContact;            
+
+            List<ContactModel> listContactModel = new List<ContactModel>();
+
+            foreach (var contact in listContact)
+            {
+                var companyName = _companyService.GetCompany(contact.CompanyId);
+
+                ContactModel contactModel = new ContactModel();
+                contactModel.IdContact = contact.IdContact;
+                contactModel.FirstName = contact.FirstName;
+                contactModel.LastName = contact.LastName;
+                contactModel.Phone = contact.Phone;
+                contactModel.Status = contact.Status;
+                contactModel.Company = companyName.CompanyName;
+
+                listContactModel.Add(contactModel);
+               
+            }
+
+            ViewBag.ListContact = listContactModel;            
 
             return View();
         }

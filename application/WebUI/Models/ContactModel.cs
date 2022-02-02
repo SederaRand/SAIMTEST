@@ -7,6 +7,7 @@ namespace SAIM_FO.Models
 {
     public class ContactModel
     {
+        public int IdContact { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Phone { get; set; }
