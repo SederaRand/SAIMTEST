@@ -1,21 +1,19 @@
-﻿@*@model SAIM_FO.Models.UserModel*@
+﻿@*@model Domain.Models.Company*@
 @{
     ViewData["Title"] = "Compagnies";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-
 <div class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">Companies</h1>
+                <h1 class="m-0">Clients</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">List companies</a></li>
-                    <li class="breadcrumb-item active">Home</li>
+                    <li class="breadcrumb-item"><a href="#">Liste clients</a></li>
+                    <li class="breadcrumb-item active">Accueil</li>
                 </ol>
             </div><!-- /.col -->
         </div><!-- /.row -->
@@ -30,7 +28,7 @@
             <div class="col-md-6">
                 <div class="card card-danger">
                     <div class="card-header">
-                        <h3 class="card-title">Import File</h3>
+                        <h3 class="card-title">Importer fichier .txt</h3>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -39,8 +37,8 @@
                                     <div class="input-group">
                                         <div class="custom-file">
                                             <form asp-controller="Company" asp-action="ImportTxt" method="post" enctype="multipart/form-data">
-                                                <input type="file" name="file" accept=".txt"/>
-                                                <button type="submit">Import File</button>
+                                                <input type="file" name="file" accept=".txt">                                               
+                                                <button type="submit">Importer</button>
                                             </form>
                                         </div>                                        
                                     </div>
@@ -54,7 +52,7 @@
             <div class="col-md-6">
                 <div class="card card-green">
                     <div class="card-header">
-                        <h3 class="card-title">Export file company</h3>
+                        <h3 class="card-title">Exporter liste des clients</h3>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -76,19 +74,13 @@
         <div class="row">
             <div class="card-header p-2">
                 <ul class="nav nav-pills">
-<<<<<<< HEAD
-                    <li class="nav-item"><a class="nav-link active" href="@Url.Action("Create","Company")">Add</a></li>                  
-=======
-                    <li class="nav-item"><a class="nav-link active" href="@Url.Action("Create","Company")">Add</a></li>
-                    <li class="nav-item"><a class="nav-link accent-green" href="#" data-toggle="tab">Import .txt</a></li>                    
-                    <li class="nav-item"><a class="nav-link" href="#" data-toggle="tab">@Html.ActionLink("Export .txt", "ExportTxt")</a></li>
->>>>>>> 66b4072980ce8ae5c80ed7a8f618eb996ce1946e
+                    <li class="nav-item"><a class="nav-link active" href="@Url.Action("Create","Company")">Ajouter</a></li>                  
                 </ul>
             </div>
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">List</h3>
+                        <h3 class="card-title">Liste des clients</h3>
                         <div class="card-tools">
                             <div class="input-group input-group-sm" style="width: 150px;">
                                 <div class="card-tools">
@@ -103,9 +95,9 @@
                         <table class="table table-head-fixed text-nowrap">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Name company</th>
-                                    <th>Address</th>
+                                    <th>Identifiant</th>
+                                    <th>Nom du client</th>
+                                    <th>Adresse</th>
                                     <th>Details</th>
                                 </tr>
                             </thead>
@@ -121,12 +113,12 @@
                                             <a class="btn btn-info btn-sm" href="@Url.Action("Update","Company" ,new { idCompany = company.IdCompany } )">
                                                 <i class="fas fa-pencil-alt">
                                                 </i>
-                                                Edit
+                                                Modifier
                                             </a>
                                             <a class="btn btn-danger btn-sm" href="@Url.Action("Delete","Company" ,new { idCompany = company.IdCompany } )">
                                                 <i class="fas fa-trash">
                                                 </i>
-                                                Delete
+                                                Supprimer
                                             </a>
                                         </td>
                                     </tr>
@@ -142,3 +134,4 @@
     </div><!-- /.container-fluid -->
 </section>
 <!-- /.content -->
+

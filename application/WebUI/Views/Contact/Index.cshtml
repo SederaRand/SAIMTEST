@@ -12,8 +12,8 @@
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">List contacts</a></li>
-                    <li class="breadcrumb-item active">Home</li>
+                    <li class="breadcrumb-item"><a href="#">Liste contacts</a></li>
+                    <li class="breadcrumb-item active">Accueil</li>
                 </ol>
             </div><!-- /.col -->
         </div><!-- /.row -->
@@ -49,12 +49,12 @@
                         <table class="table table-head-fixed text-nowrap">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Phone</th>
-                                    <th>Status</th>
-                                    <th>Company</th>
+                                    <th>Identifiant</th>
+                                    <th>Nom</th>
+                                    <th>Prénom</th>
+                                    <th>Numéro de téléphone</th>
+                                    <th>Status(Favoris/Pas favoris)</th>
+                                    <th>Société</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -74,16 +74,11 @@
                                         <td>No Favorite</td>
                                     }
                                     <td>@contact.CompanyId</td>
-                                    <td class="project-actions text-right">
-                                        <a class="btn btn-info btn-sm" href="@Url.Action("Update","Contact" ,new { idContact = contact.IdContact } )">
-                                            <i class="fas fa-pencil-alt">
-                                            </i>
-                                            Edit
-                                        </a>
+                                    <td class="project-actions text-right">                                       
                                         <a class="btn btn-danger btn-sm" href="@Url.Action("Delete","Contact" ,new { idContact = contact.IdContact } )">
                                             <i class="fas fa-trash">
                                             </i>
-                                            Delete
+                                            Supprimer
                                         </a>
                                     </td>
                                 </tr>

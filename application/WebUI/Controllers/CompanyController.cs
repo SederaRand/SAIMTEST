@@ -55,31 +55,47 @@ namespace SAIM_FO.Controllers
             }            
         }
 
-        [HttpPut]
-        [Route("edit/{id}")]
-        public IActionResult Update(int idCompany,[FromBody] Company model)
-        {           
-            Company company = _companyService.GetCompany(idCompany);
-
-            if (company == null ) return RedirectToAction("Index", "Company");
-
-            if (idCompany != company.IdCompany) return RedirectToAction("Index", "Company");
-
+        [HttpGet]
+        public IActionResult Update(int idCompany)
+        {         
             try
+            {
+                Company company = _companyService.GetCompany(idCompany);
+                return View(company);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        [HttpPost]       
+        public IActionResult Update(Company model)
+        {
+            Company company = _companyService.GetCompany(model.IdCompany);
+
+            if (company.IdCompany != null && company.IdCompany == model.IdCompany)
             {
                 company.Details = model.Details;
                 company.CompanyName = model.CompanyName;
                 company.Address = model.Address;
 
-                _companyService.UpdateCompany(company);
-            }
-            catch (Exception)
-            {
+                try
+                {
+                    _companyService.UpdateCompany(company);
 
-                throw;
+                    return RedirectToAction("Index", "Company");
+                }
+                catch (Exception)
+                {
+
+                    return RedirectToAction("Create", "Company");
+                }
             }
-            
-            return View(company);
+            else
+            {
+                return RedirectToAction("Create", "Company");
+            }
         }        
 
         public IActionResult Delete(int idCompany)
@@ -106,9 +122,8 @@ namespace SAIM_FO.Controllers
         }
 
         /*
-         * Export List of Companies into Txt
+         * Export List of Companies into File Txt
          */
-<<<<<<< HEAD
         public IActionResult ExportTxt()
         {           
             try
@@ -133,7 +148,7 @@ namespace SAIM_FO.Controllers
         }
 
         /*
-         * Import Txt list of companies
+         * Import File txt list of companies
          */
         [HttpPost]
         public ActionResult ImportTxt(IFormFile file)
@@ -185,22 +200,6 @@ namespace SAIM_FO.Controllers
 
                 ViewBag.Message = "Import failed!!";
                 return RedirectToAction("Index", "Company");
-=======
-        public void ExportTxt()
-        {
-            // Where we take the file.txt
-            string path = "C:\\Users\\Ibonia\\Documents\\WORK FILE\\PROJECTS\\SAIM TEST\\application\\WebUI\\wwwroot\\txt";
-
-            // Take list of companies
-            List<Company> listCompany = _companyService.GetCompanies();
-
-            using (TextWriter tw = new StreamWriter(path))
-            {
-                foreach (var item in listCompany)
-                {
-                    tw.WriteLine(string.Format("IdCompany: {0} - Name: {1} - Details: {2} - Address: {3} \n", item.IdCompany, item.CompanyName, item.Details, item.Address));
-                }
->>>>>>> 66b4072980ce8ae5c80ed7a8f618eb996ce1946e
             }
         }
     }

@@ -9,12 +9,12 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">Companies</h1>
+                <h1 class="m-0">Clients</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Editting company</a></li>
-                    <li class="breadcrumb-item active">Home</li>
+                    <li class="breadcrumb-item"><a href="#">Modifier client</a></li>
+                    <li class="breadcrumb-item active">Accueil</li>
                 </ol>
             </div><!-- /.col -->
         </div><!-- /.row -->
@@ -29,31 +29,31 @@
                 <!-- general form elements -->
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Add</h3>
+                        <h3 class="card-title">Modifications</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
                     <form asp-controller="Company" asp-action="Update" method="post">
                         <div class="card-body">
+                            <input asp-for="IdCompany" class="form-control" type="hidden">
                             <div class="form-group">
-                                <label>Details company</label>
-                                <textarea asp-for="Details" class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                                <label for="address">Nom du client</label>
+                                <input asp-for="CompanyName" class="form-control" type="text" placeholder="Nom">
                             </div>
                             <div class="form-group">
-                                <label for="address">Name company</label>
-                                <input asp-for="CompanyName" class="form-control" type="text" placeholder="Name">
+                                <label>Détails du client</label>
+                                <textarea asp-for="Details" class="form-control" rows="3" placeholder="Entrer les détails ..."></textarea>
                             </div>
                             <div class="form-group">
-                                <label for="address">Address</label>
-                                <input asp-for="Address" class="form-control" type="text" placeholder="Address">
+                                <label for="address">Adresse</label>
+                                <input asp-for="Address" class="form-control" type="text" placeholder="Adresse">
                             </div>
                         </div>
                         <!-- /.card-body -->
 
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary">Submit</button>                           
-                            <button type="reset" class="btn btn-danger">Cancel</button>
-
+                            <button type="submit" class="btn btn-primary">Modifier</button>                           
+                            <button type="reset" class="btn btn-danger">Annuler</button>
                         </div>
                     </form>
                 </div>

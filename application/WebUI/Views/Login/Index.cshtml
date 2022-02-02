@@ -10,13 +10,13 @@
             <a href="../../index2.html" class="h1"><b>Admin</b></a>
         </div>
         <div class="card-body">
-            <p class="login-box-msg">Sign in to start your session</p>
+            <p class="login-box-msg">Connectez-vous pour commencer</p>
                 <form asp-controller="Login" asp-action="Login" method="post">
                     <div class="input-group mb-3">
-                        <input asp-for="Username" class="form-control" placeholder="Username">
+                        <input asp-for="Username" class="form-control" placeholder="Nom d'utilsateur">
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" asp-for="Password" class="form-control" placeholder="Password">
+                        <input type="password" asp-for="Password" class="form-control" placeholder="Mot de passe">
                         <span>@ViewBag.Error</span>
                     </div>
                     <div class="row">
@@ -25,7 +25,7 @@
                         </div>
                         <!-- /.col -->
                         <div class="col-4">
-                            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                            <button type="submit" class="btn btn-primary btn-block">Connecter</button>
                         </div>
                         <!-- /.col -->
                     </div>
