@@ -108,6 +108,7 @@ namespace SAIM_FO.Controllers
         /*
          * Export List of Companies into Txt
          */
+<<<<<<< HEAD
         public IActionResult ExportTxt()
         {           
             try
@@ -184,6 +185,22 @@ namespace SAIM_FO.Controllers
 
                 ViewBag.Message = "Import failed!!";
                 return RedirectToAction("Index", "Company");
+=======
+        public void ExportTxt()
+        {
+            // Where we take the file.txt
+            string path = "C:\\Users\\Ibonia\\Documents\\WORK FILE\\PROJECTS\\SAIM TEST\\application\\WebUI\\wwwroot\\txt";
+
+            // Take list of companies
+            List<Company> listCompany = _companyService.GetCompanies();
+
+            using (TextWriter tw = new StreamWriter(path))
+            {
+                foreach (var item in listCompany)
+                {
+                    tw.WriteLine(string.Format("IdCompany: {0} - Name: {1} - Details: {2} - Address: {3} \n", item.IdCompany, item.CompanyName, item.Details, item.Address));
+                }
+>>>>>>> 66b4072980ce8ae5c80ed7a8f618eb996ce1946e
             }
         }
     }
