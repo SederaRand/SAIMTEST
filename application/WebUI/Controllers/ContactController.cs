@@ -64,30 +64,34 @@ namespace SAIM_FO.Controllers
         [HttpPost]
         public IActionResult Create(ContactModel modelView)
         {
-            Contact contact = new Contact();
-
-            contact.FirstName = modelView.FirstName;
-            contact.LastName = modelView.LastName;
-            contact.Phone = modelView.Phone;
-
-            if (modelView.Status.ToString() == "Favorites") contact.Status = true;
-            else contact.Status = false;
-
-            string company = modelView.Company;
-            var id = listBoxCompanies.FirstOrDefault(x => x.Value == company).Key;
-
-            contact.CompanyId = id;
-
-            try
+            if (ModelState.IsValid)
             {
-                _contactService.AddContact(contact);
+                Contact contact = new Contact();
 
-                return RedirectToAction("Index", "Contact");
+                contact.FirstName = modelView.FirstName;
+                contact.LastName = modelView.LastName;
+                contact.Phone = modelView.Phone;
+
+                if (modelView.Status.ToString() == "Favorites") contact.Status = true;
+                else contact.Status = false;
+
+                string company = modelView.Company;
+                var id = listBoxCompanies.FirstOrDefault(x => x.Value == company).Key;
+
+                contact.CompanyId = id;
+
+                try
+                {
+                    _contactService.AddContact(contact);
+
+                    return RedirectToAction("Index", "Contact");
+                }
+                catch (Exception)
+                {
+                    return RedirectToAction("Create", "Contact");
+                }
             }
-            catch (Exception)
-            {
-                return RedirectToAction("Create", "Contact");
-            }
+            return View();
         }
 
         public IActionResult Delete(int idContact)

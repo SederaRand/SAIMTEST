@@ -38,7 +38,7 @@ namespace SAIM_FO.Controllers
             else
             {
                 // Return span to nofity that username or password are wrong
-                ViewBag.Error = "testt errrooor";
+                ViewBag.Error = "Votre identifiant ou mot de passe est incorrecte";
                 return View("Index");                
             }
         }

@@ -36,23 +36,27 @@ namespace SAIM_FO.Controllers
         [HttpPost]
         public IActionResult Create(CompanyModel modelView)
         {
-            Company company = new Company();
-
-            company.Details = modelView.Details;
-            company.CompanyName = modelView.CompanyName;
-            company.Address = modelView.Address;
-
-            try
+            if (ModelState.IsValid)
             {
-                _companyService.AddCompany(company);
+                Company company = new Company();
 
-                return RedirectToAction("Index", "Company");
+                company.Details = modelView.Details;
+                company.CompanyName = modelView.CompanyName;
+                company.Address = modelView.Address;
+
+                try
+                {
+                    _companyService.AddCompany(company);
+
+                    return RedirectToAction("Index", "Company");
+                }
+                catch (Exception)
+                {
+
+                    return RedirectToAction("Create", "Company");
+                }
             }
-            catch (Exception)
-            {
-
-                return RedirectToAction("Create", "Company");
-            }            
+            return View();
         }
 
         [HttpGet]

@@ -37,6 +37,7 @@
                             <div class="form-group">
                                 <label for="FirstName">First Name</label>
                                 <input asp-for="FirstName" class="form-control" type="text">
+                                <span asp-validation-for="FirstName" class="text-danger"></span>
                             </div>
                             <div class="form-group">
                                 <label for="LastName">Last Name</label>
@@ -55,16 +56,16 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="address">Company</label>
+                                <label for="company">Company</label>
 
                                 <select class="form-control" asp-for="Company">
-
                                     <option></option>
                                     @foreach (var company in ViewBag.ListCompanies)
                                     {
                                         <option>@company</option>
                                     }
                                 </select>
+                                <span asp-validation-for="Company" class="text-danger"></span>
                             </div>
                         </div>
                         <!-- /.card-body -->
