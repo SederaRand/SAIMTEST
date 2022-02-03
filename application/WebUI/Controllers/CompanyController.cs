@@ -27,7 +27,6 @@ namespace SAIM_FO.Controllers
         {
             List<Company> listCompany = _companyService.GetCompanies();
             ViewBag.ListCompany = listCompany;
-
             
             return View();
         }
@@ -134,7 +133,7 @@ namespace SAIM_FO.Controllers
         }
 
         /*
-         * Export List of Companies into File Txt
+         * Function for Export List of Companies into File Txt
          */
         public IActionResult ExportTxt()
         {           
@@ -164,7 +163,7 @@ namespace SAIM_FO.Controllers
         }
 
         /*
-         * Import File txt list of companies
+         * Function for Import File txt list of companies
          */
         [HttpPost]
         public ActionResult ImportTxt(IFormFile file)
@@ -211,7 +210,7 @@ namespace SAIM_FO.Controllers
             {
                 throw ex;
 
-                ViewBag.Message = "Import failed!!";
+                _notyf.Error("L'importation a echoué !");
                 return RedirectToAction("Index", "Company");
             }
         }
