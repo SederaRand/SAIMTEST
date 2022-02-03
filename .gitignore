@@ -1,3 +1,13 @@
-application/.vs/*
-application/WebUi/bin/*
-application/WebUI/obj/*
+Application/.vs/*
+Application/WebUi/bin/*
+Application/WebUI/obj/*
+
+Application/Application/bin/*
+Application/Application/obj/*
+
+Application/Domain/bin/*
+Application/Domain/obj/*
+
+Application/Infrastructure/bin/*
+Application/Infrasctructure/obj/*
+
