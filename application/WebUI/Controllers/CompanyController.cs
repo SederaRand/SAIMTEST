@@ -134,7 +134,11 @@ namespace SAIM_FO.Controllers
             {
                 List<Company> listCompany = _companyService.GetCompanies();
 
-                using (TextWriter tw = new StreamWriter("C:\\Users\\Ibonia\\Desktop\\Params\\companies.txt"))
+                string pathSystem = System.IO.Directory.GetCurrentDirectory();
+
+                string nameFile = "companies.txt";             
+
+                using (TextWriter tw = new StreamWriter(pathSystem + "\\ExportFile\\" + nameFile))
                 {
                     foreach (var item in listCompany)
                     {
@@ -144,10 +148,9 @@ namespace SAIM_FO.Controllers
 
                 return RedirectToAction("Index", "Company");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw ex;
             }
         }
 
