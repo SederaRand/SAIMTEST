@@ -1,5 +1,6 @@
 using Application.Interfaces;
 using Application.Services;
+using AspNetCoreHero.ToastNotification;
 using Domain.Context;
 using Infrastructure.Interfaces.CommonInterfaces;
 using Infrastructure.Interfaces.IQueries;
@@ -40,6 +41,8 @@ namespace SAIM_FO
             services.AddTransient<IContactQuery, ContactQuery>();
             services.AddTransient<IUserQuery, UserQuery>();
 
+            //Service notify
+            services.AddNotyf(config => { config.DurationInSeconds = 5; config.IsDismissable = true; config.Position = NotyfPosition.BottomRight; });
 
             services.AddDbContext<MyDbContext>(options => options.UseMySQL(Configuration.GetConnectionString("Default")));
             services.AddControllersWithViews();

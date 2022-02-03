@@ -151,3 +151,7 @@ C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\WebUI\obj\Deb
 C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Company\Update.cshtml.g.cs
 C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Contact\Create.cshtml.g.cs
 C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Contact\Index.cshtml.g.cs
+C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\WebUI\bin\Debug\netcoreapp3.1\WebUI.StaticWebAssets.xml
+C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\WebUI\bin\Debug\netcoreapp3.1\AspNetCoreHero.ToastNotification.Views.dll
+C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\WebUI\bin\Debug\netcoreapp3.1\AspNetCoreHero.ToastNotification.dll
+C:\Users\Ibonia\Documents\WORK FILE\PROJECTS\SAIM TEST\application\WebUI\obj\Debug\netcoreapp3.1\WebUI.MvcApplicationPartsAssemblyInfo.cs

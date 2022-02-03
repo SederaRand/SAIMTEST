@@ -1,4 +1,5 @@
 ﻿using Application.Interfaces;
+using AspNetCoreHero.ToastNotification.Abstractions;
 using Domain.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -14,10 +15,12 @@ namespace SAIM_FO.Controllers
     public class CompanyController : Controller
     {
         private ICompanyService _companyService;
+        private readonly INotyfService _notyf;
 
-        public CompanyController(ICompanyService companyService)
+        public CompanyController(ICompanyService companyService, INotyfService notyf)
         {
             this._companyService = companyService;
+            this._notyf = notyf;
         }
 
         public IActionResult Index()
@@ -25,6 +28,7 @@ namespace SAIM_FO.Controllers
             List<Company> listCompany = _companyService.GetCompanies();
             ViewBag.ListCompany = listCompany;
 
+            
             return View();
         }
 
@@ -48,11 +52,13 @@ namespace SAIM_FO.Controllers
                 {
                     _companyService.AddCompany(company);
 
+                    _notyf.Success("Client ajouté avec succès");
                     return RedirectToAction("Index", "Company");
+                    
                 }
                 catch (Exception)
                 {
-
+                    _notyf.Error("Enregistrement échoué");
                     return RedirectToAction("Create", "Company");
                 }
             }
@@ -88,11 +94,12 @@ namespace SAIM_FO.Controllers
                 {
                     _companyService.UpdateCompany(company);
 
+                    _notyf.Success("Client modifié avec succès");
                     return RedirectToAction("Index", "Company");
                 }
                 catch (Exception)
                 {
-
+                    _notyf.Error("Modification échoué");
                     return RedirectToAction("Create", "Company");
                 }
             }
@@ -116,6 +123,7 @@ namespace SAIM_FO.Controllers
                 {
                     _companyService.DeleteCompany(company);
 
+                    _notyf.Information("Client supprimé");
                     return RedirectToAction("Index", "Company");
                 }
                 catch (Exception ex)
@@ -146,6 +154,7 @@ namespace SAIM_FO.Controllers
                     }
                 }
 
+                _notyf.Success("Export réussi bravo !");
                 return RedirectToAction("Index", "Company");
             }
             catch (Exception ex)
@@ -188,8 +197,6 @@ namespace SAIM_FO.Controllers
                             });
                         }
                     }
-
-                    Console.WriteLine(listCompany.Count);
                     // Post the list
                     foreach (var company in listCompany)
                     {
@@ -197,7 +204,7 @@ namespace SAIM_FO.Controllers
                     }
                 }
 
-                ViewBag.Message = "Import Successfully!!";
+                _notyf.Success("Importation réussi bravo !");
                 return RedirectToAction("Index", "Company");
             }
             catch(Exception ex)

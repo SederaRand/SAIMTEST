@@ -1,0 +1,6 @@
+Google; ESN International; USA
+Apple; IOT; USA
+Amazon; E-commerce; USA
+Sony;  Video game; Chine
+Uber; France; Transport
+test notify; no; no

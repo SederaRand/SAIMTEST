@@ -73,7 +73,7 @@
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
-                <div class="user-panel mt-3 pb-3 mb-3 d-flex">                    
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="info">
                         <a href="#" class="d-block">sa</a>
                     </div>
@@ -83,12 +83,12 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-                     with font-awesome or any other icon font library -->
+                        with font-awesome or any other icon font library -->
                         <li class="nav-item menu-open">
                             <a href="@Url.Action("Index","Company")" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
-                                    Clients                                    
+                                    Clients
                                 </p>
                             </a>
                         </li>
@@ -96,7 +96,7 @@
                             <a href="@Url.Action("Index","Contact")" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
-                                    Contacts                                    
+                                    Contacts
                                 </p>
                             </a>
                         </li>
@@ -108,10 +108,10 @@
         </aside>
 
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">            
+        <div class="content-wrapper">
             <!-- Main content -->
             <section class="content">
-                <div class="container-fluid">                   
+                <div class="container-fluid">
                     <!-- Main row -->
                     <main role="main" class="pb-3">
                         @RenderBody()
@@ -121,7 +121,7 @@
             </section>
             <!-- /.content -->
         </div>
-        <!-- /.content-wrapper -->        
+        <!-- /.content-wrapper -->
     </div>
 
     <footer class="border-top footer text-muted">
@@ -149,7 +149,7 @@
     <!-- ChartJS -->
     <script src="~/lib/jquery/dist/Chart.min.js"></script>
     <!-- Sparkline -->
-    <script src="~/jquery/dist/sparkline.js"></script>   
+    <script src="~/jquery/dist/sparkline.js"></script>
     <!-- daterangepicker -->
     <script src="~/lib/jquery/dist/moment.min.js"></script>
     <script src="~/lib/jquery/dist/daterangepicker.js"></script>
@@ -157,7 +157,9 @@
     <script src="~/lib/jquery/dist/jquery.overlayScrollbars.min.js"></script>
     <!-- AdminLTE App -->
     <script src="~/js/adminlte.js"></script>
-    
+
+    @await Component.InvokeAsync("Notyf")
+
     @RenderSection("Scripts", required: false)
 </body>
 </html>

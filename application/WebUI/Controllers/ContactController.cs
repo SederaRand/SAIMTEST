@@ -1,4 +1,5 @@
 ﻿using Application.Interfaces;
+using AspNetCoreHero.ToastNotification.Abstractions;
 using Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using SAIM_FO.Models;
@@ -14,12 +15,15 @@ namespace SAIM_FO.Controllers
         private IContactService _contactService;
         private ICompanyService _companyService;
 
+        private readonly INotyfService _notyf;
+
         public static Dictionary<int, string> listBoxCompanies = new Dictionary<int, string>();
 
-        public ContactController(IContactService contactService, ICompanyService companyService)
+        public ContactController(IContactService contactService, ICompanyService companyService, INotyfService notyf)
         {
             this._contactService = contactService;
             this._companyService = companyService;
+            this._notyf = notyf;
         }
 
         public IActionResult Index()
@@ -84,10 +88,12 @@ namespace SAIM_FO.Controllers
                 {
                     _contactService.AddContact(contact);
 
+                    _notyf.Success("Contact ajouté avec succès");
                     return RedirectToAction("Index", "Contact");
                 }
                 catch (Exception)
                 {
+                    _notyf.Error("Enregistrement échoué");
                     return RedirectToAction("Create", "Contact");
                 }
             }
@@ -108,6 +114,7 @@ namespace SAIM_FO.Controllers
                 {
                     _contactService.DeleteContact(contact);
 
+                    _notyf.Information("Client supprimé");
                     return RedirectToAction("Index", "Contact");
                 }
                 catch (Exception ex)
