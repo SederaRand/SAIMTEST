@@ -138,7 +138,7 @@ namespace SAIM_FO.Controllers
 
                 string nameFile = "companies.txt";             
 
-                using (TextWriter tw = new StreamWriter(pathSystem + "\\ExportFile\\" + nameFile))
+                using (TextWriter tw = new StreamWriter(pathSystem + "\\Others\\ExportFile\\" + nameFile))
                 {
                     foreach (var item in listCompany)
                     {
@@ -165,12 +165,11 @@ namespace SAIM_FO.Controllers
             {
                 if (file.Length > 0)
                 {
-                    string filePath = @"C:\Users\Public\Documents\";
+                    string pathSystem = System.IO.Directory.GetCurrentDirectory();
 
-                    string fileName = Path.GetDirectoryName(file.FileName);
-                    string _path = filePath + fileName;
+                    string _path = pathSystem + "\\Others\\ImportFile\\" + file.FileName;
 
-                    //Create a new list
+                    // Create a new list
                     List<Company> listCompany = new List<Company>(); 
                     
                     // Convert the content of list into string

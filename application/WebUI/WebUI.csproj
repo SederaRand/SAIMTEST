@@ -20,7 +20,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ExportFile\" />
+    <Folder Include="Others\ImportFile\" />
+    <Folder Include="Others\ExportFile\" />
     <Folder Include="wwwroot\img\" />
     <Folder Include="wwwroot\webfonts\" />
   </ItemGroup>

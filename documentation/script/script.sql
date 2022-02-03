@@ -27,3 +27,5 @@ ALTER TABLE Contact MODIFY COLUMN CompanyId INT NOT NULL,
 ADD CONSTRAINT contact_company_id_fk
 FOREIGN KEY(CompanyId)
 REFERENCES Company(IdCompany);
+
+INSERT INTO User(Username, Email, Password) VALUES ('sa', 'sa@gmail.com', 'sa');
