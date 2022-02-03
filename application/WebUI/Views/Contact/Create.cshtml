@@ -22,8 +22,7 @@
 
 <section class="content">
     <div class="container-fluid">
-        <div class="row">
-        <div class="row">
+        <div class="row">        
             <!-- left column -->
             <div class="col-md-12">
                 <!-- general form elements -->
@@ -61,10 +60,10 @@
 
                                 <select class="form-control" asp-for="Company">
                                     <option></option>
-                                    @foreach (var company in ViewBag.ListCompanies)
-                                    {
+                                     @foreach (var company in ViewBag.ListCompanies)
+                                     {
                                         <option>@company</option>
-                                    }
+                                     }
                                 </select>
                                 <span asp-validation-for="Company" class="text-danger"></span>
                             </div>

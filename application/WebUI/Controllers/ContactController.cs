@@ -17,6 +17,7 @@ namespace SAIM_FO.Controllers
 
         private readonly INotyfService _notyf;
 
+        
         public static Dictionary<int, string> listBoxCompanies = new Dictionary<int, string>();
 
         public ContactController(IContactService contactService, ICompanyService companyService, INotyfService notyf)
@@ -53,15 +54,34 @@ namespace SAIM_FO.Controllers
             return View();
         }
 
+        /*
+         * Init the list of companies in the View Create
+         */
+        private IEnumerable<string> initList()
+        {
+            List<Company> listCompanies = _companyService.GetCompanies();
+
+            if (listBoxCompanies.Count == 0)
+            {
+                foreach (var company in listCompanies) listBoxCompanies.Add(company.IdCompany, company.CompanyName);
+                var finalList = listBoxCompanies.Select(x => x.Value);
+
+                return finalList;
+            }
+            else
+            {
+                Console.WriteLine(listBoxCompanies);
+
+                var finalList = listBoxCompanies.Select(x => x.Value);
+                return finalList;
+            }
+        }
+
         public IActionResult Create()
         {
-            // Take list of companies
-            List<Company> listCompanies = _companyService.GetCompanies();           
+            var listCompanies = initList();
 
-            foreach (var company in listCompanies) listBoxCompanies.Add(company.IdCompany, company.CompanyName);
-
-            ViewBag.ListCompanies = listBoxCompanies.Select(x => x.Value);
-
+            ViewBag.ListCompanies = listCompanies;
             return View();
         }
 
@@ -83,7 +103,6 @@ namespace SAIM_FO.Controllers
                 var id = listBoxCompanies.FirstOrDefault(x => x.Value == company).Key;
 
                 contact.CompanyId = id;
-
                 try
                 {
                     _contactService.AddContact(contact);
@@ -97,6 +116,11 @@ namespace SAIM_FO.Controllers
                     return RedirectToAction("Create", "Contact");
                 }
             }
+
+            var listCompanies = initList();
+
+            ViewBag.ListCompanies = listCompanies;
+
             return View();
         }
 
