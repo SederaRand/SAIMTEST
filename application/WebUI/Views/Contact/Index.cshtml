@@ -65,13 +65,13 @@
                                     <td>@contact.FirstName</td>
                                     <td>@contact.LastName</td>
                                     <td>@contact.Phone</td>
-                                    @if (@contact.Status == true)
+                                    @if (@contact.Status.ToString() == "Favori")
                                     {
-                                        <td>Favorite</td>
+                                        <td>Favori</td>
                                     }
                                     else
                                     {
-                                        <td>No Favorite</td>
+                                        <td>Non Favori</td>
                                     }
                                     <td>@contact.Company</td>
                                     <td class="project-actions text-right">                                       

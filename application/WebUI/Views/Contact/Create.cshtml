@@ -1,8 +1,7 @@
 ﻿@model SAIM_FO.Models.ContactModel
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
 @{
+    ViewData["Title"] = "Ajout Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="content-header">
@@ -22,7 +21,7 @@
 
 <section class="content">
     <div class="container-fluid">
-        <div class="row">        
+        <div class="row">
             <!-- left column -->
             <div class="col-md-12">
                 <!-- general form elements -->
@@ -49,21 +48,20 @@
                             </div>
                             <div class="form-group">
                                 <label>Status</label>
-                                <select class="form-control" asp-for="Status">
-                                    <option></option>
-                                    <option>Favorites</option>
-                                    <option>No Favorites</option>
+                                <select class="form-control" asp-for="Status" name="Status">
+                                    <option value="null"></option>
+                                    <option value="true">Favori</option>
+                                    <option value="false">Non Favori</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="company">Company</label>
-
                                 <select class="form-control" asp-for="Company">
-                                    <option></option>
-                                     @foreach (var company in ViewBag.ListCompanies)
-                                     {
-                                        <option>@company</option>
-                                     }
+                                    <option value=""></option>
+                                    @foreach (var company in ViewBag.ListCompanies)
+                                    {
+                                        <option value="@company">@company</option>
+                                    }
                                 </select>
                                 <span asp-validation-for="Company" class="text-danger"></span>
                             </div>
