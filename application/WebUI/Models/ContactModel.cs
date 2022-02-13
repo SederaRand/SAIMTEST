@@ -13,7 +13,7 @@ namespace SAIM_FO.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Phone { get; set; }
-        public bool Status { get; set; }
+        public string Status { get; set; }
         [Required(ErrorMessage = "Le nom de la société")]
         public string Company { get; set; }
     }

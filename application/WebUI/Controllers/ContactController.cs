@@ -38,11 +38,14 @@ namespace SAIM_FO.Controllers
                 var companyName = _companyService.GetCompany(contact.CompanyId);
 
                 ContactModel contactModel = new ContactModel();
+
                 contactModel.IdContact = contact.IdContact;
                 contactModel.FirstName = contact.FirstName;
                 contactModel.LastName = contact.LastName;
                 contactModel.Phone = contact.Phone;
-                contactModel.Status = contact.Status;
+
+                contactModel.Status = (contact.Status == true) ? contactModel.Status = "Favorite" : contactModel.Status = "Non Favorite";
+
                 contactModel.Company = companyName.CompanyName;
 
                 listContactModel.Add(contactModel);
@@ -57,14 +60,14 @@ namespace SAIM_FO.Controllers
         /*
          * Init the list of companies in the View Create
          */
-        private IEnumerable<string> initList()
+        private IEnumerable<string> InitList()
         {
             List<Company> listCompanies = _companyService.GetCompanies();
 
             if (listBoxCompanies.Count == 0)
             {
                 foreach (var company in listCompanies) listBoxCompanies.Add(company.IdCompany, company.CompanyName);
-                var finalList = listBoxCompanies.Select(x => x.Value);
+                var finalList = listBoxCompanies.Select(x => x.Value).ToList();
 
                 return finalList;
             }
@@ -79,7 +82,7 @@ namespace SAIM_FO.Controllers
 
         public IActionResult Create()
         {
-            var listCompanies = initList();
+            var listCompanies = InitList();
 
             ViewBag.ListCompanies = listCompanies;
             return View();
@@ -88,6 +91,9 @@ namespace SAIM_FO.Controllers
         [HttpPost]
         public IActionResult Create(ContactModel modelView)
         {
+            var listCompanies = InitList();
+            ViewBag.ListCompanies = listCompanies;
+
             if (ModelState.IsValid)
             {
                 Contact contact = new Contact();
@@ -96,8 +102,9 @@ namespace SAIM_FO.Controllers
                 contact.LastName = modelView.LastName;
                 contact.Phone = modelView.Phone;
 
-                if (modelView.Status.ToString() == "Favorites") contact.Status = true;
-                else contact.Status = false;
+                if (modelView.Status.ToString() == "null") contact.Status = false;
+                if (modelView.Status.ToString() == "true") contact.Status = true;
+                if (modelView.Status.ToString() == "false") contact.Status = true;
 
                 string company = modelView.Company;
                 var id = listBoxCompanies.FirstOrDefault(x => x.Value == company).Key;
@@ -114,13 +121,8 @@ namespace SAIM_FO.Controllers
                 {
                     _notyf.Error("Enregistrement échoué");
                     return RedirectToAction("Create", "Contact");
-                }
+                }                
             }
-
-            var listCompanies = initList();
-
-            ViewBag.ListCompanies = listCompanies;
-
             return View();
         }
 

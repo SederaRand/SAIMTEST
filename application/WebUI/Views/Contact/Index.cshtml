@@ -65,7 +65,7 @@
                                     <td>@contact.FirstName</td>
                                     <td>@contact.LastName</td>
                                     <td>@contact.Phone</td>
-                                    @if (@contact.Status == true)
+                                    @if (@contact.Status.ToString() == "Favorite")
                                     {
                                         <td>Favorite</td>
                                     }
