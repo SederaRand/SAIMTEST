@@ -18,7 +18,7 @@ namespace SAIM_FO.Controllers
         private readonly INotyfService _notyf;
 
         
-        public static Dictionary<int, string> listBoxCompanies = new Dictionary<int, string>();
+        public Dictionary<int, string> listBoxCompanies = new Dictionary<int, string>();
 
         public ContactController(IContactService contactService, ICompanyService companyService, INotyfService notyf)
         {
